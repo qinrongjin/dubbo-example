@@ -1,18 +1,14 @@
 package cn.tiny77.consumer;
 
-import java.util.concurrent.Future;
-
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.alibaba.dubbo.rpc.RpcContext;
 
 import cn.tiny77.provider.api.AsyncService;
 import cn.tiny77.provider.api.AttachMentService;
 import cn.tiny77.provider.api.CacheService;
 import cn.tiny77.provider.api.DemoService;
-import cn.tiny77.provider.api.StubService;
 import cn.tiny77.provider.api.ValidateService;
 
 @Component
