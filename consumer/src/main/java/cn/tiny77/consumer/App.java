@@ -4,6 +4,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.dubbo.rpc.RpcContext;
 
 import cn.tiny77.provider.api.AsyncService;
 import cn.tiny77.provider.api.AttachMentService;
@@ -38,6 +39,9 @@ public class App {
 		
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:consumer.xml");
         context.start();
+        RpcContext ctx = RpcContext.getContext();
+        String romateHost = ctx.getRemoteHost();
+        System.out.println(romateHost);
         App app = (App) context.getBean("app");
         System.out.println(app.demoService.sayHello("dsds"));
 	}
