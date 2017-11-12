@@ -10,6 +10,7 @@ public class App {
 		
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:provider.xml");
         context.start();
+        System.out.println("run ning");
         System.in.read(); // 按任意键退出
 	}
 

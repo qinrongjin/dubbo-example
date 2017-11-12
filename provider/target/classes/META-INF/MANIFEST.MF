@@ -1,5 +1,16 @@
 Manifest-Version: 1.0
 Built-By: Administrator
+Class-Path: . lib/dubbo-2.5.3.jar lib/spring-2.5.6.SEC03.jar lib/javas
+ sist-3.15.0-GA.jar lib/netty-3.2.5.Final.jar lib/spring-context-4.3.1
+ 1.RELEASE.jar lib/spring-aop-4.3.11.RELEASE.jar lib/spring-expression
+ -4.3.11.RELEASE.jar lib/spring-beans-4.3.11.RELEASE.jar lib/spring-co
+ re-4.3.11.RELEASE.jar lib/jedis-2.0.0.jar lib/commons-pool2-2.4.2.jar
+  lib/commons-pool-1.6.jar lib/validation-api-1.0.0.GA.jar lib/hiberna
+ te-validator-4.2.0.Final.jar lib/slf4j-api-1.6.1.jar lib/commons-logg
+ ing-1.2.jar lib/zkclient-0.10.jar lib/zookeeper-3.4.8.jar lib/slf4j-l
+ og4j12-1.6.1.jar lib/log4j-1.2.16.jar lib/jline-0.9.94.jar lib/netty-
+ 3.7.0.Final.jar
 Build-Jdk: 1.8.0_144
 Created-By: Maven Integration for Eclipse
+Main-Class: com.alibaba.dubbo.container.Main
 

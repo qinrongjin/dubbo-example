@@ -1,36 +1,48 @@
 package cn.tiny77.consumer;
 
+import java.util.concurrent.Future;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.dubbo.rpc.RpcContext;
 
+import cn.tiny77.provider.api.AsyncService;
+import cn.tiny77.provider.api.AttachMentService;
 import cn.tiny77.provider.api.CacheService;
 import cn.tiny77.provider.api.DemoService;
+import cn.tiny77.provider.api.StubService;
 import cn.tiny77.provider.api.ValidateService;
 
 @Component
 public class App {
 	
 	@Reference(version = "1.0", group = "ga")
-	private DemoService demoService;
+	DemoService demoService;
 	
 	@Reference(version = "1.0", group = "gb")
-	private DemoService demoService2;
+	DemoService demoService2;
 	
 	@Reference(validation = "true")
-	private ValidateService validateService;
+	ValidateService validateService;
 	
 	@Reference(cache = "lru")
-	private CacheService cacheService;
+	CacheService cacheService;
 	
-	public static void main(String[] args) {
+	@Reference
+	AttachMentService attachMentService;
+	
+	@Reference(async = true, timeout = 10000)
+	AsyncService asyncService;
+	
+	
+	
+	public static void main(String[] args) throws Throwable{
 		
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:consumer.xml");
         context.start();
         App app = (App) context.getBean("app");
-        System.out.println(app.cacheService.getUserName(2));
-        System.out.println(app.cacheService.getUserName(2));
-        System.out.println(app.cacheService.getUserName(3));
+        System.out.println(app.demoService.sayHello("dsds"));
 	}
 }
