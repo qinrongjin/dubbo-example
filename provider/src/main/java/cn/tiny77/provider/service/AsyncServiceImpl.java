@@ -4,7 +4,7 @@ import com.alibaba.dubbo.config.annotation.Service;
 
 import cn.tiny77.provider.api.AsyncService;
 
-@Service
+@Service(owner = "mary")
 public class AsyncServiceImpl implements AsyncService{
 
 	@Override
